@@ -20,33 +20,33 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "RediwrapAnalytics",
-            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.0-debug-2/RediwrapAnalytics.xcframework.zip",
-            checksum: "7e90718aa4a9d2642380b99f204766710e148c446aec61d777d06ed8aa1490c5"
+            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.1/RediwrapAnalytics.xcframework.zip",
+            checksum: "0c43af745034af15f147b6ecff832ec140da86ab60ab7f1b7efb407bb2e7948e"
         ),
         .binaryTarget(
             name: "RediwrapBackfill",
-            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.0-debug-2/RediwrapBackfill.xcframework.zip",
-            checksum: "89e88393a0f454299d2a20bfb3bfed33241757a0f548cc56d12cd5e52228650c"
+            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.1/RediwrapBackfill.xcframework.zip",
+            checksum: "ef0bc1ad4d3277c3ed73624f9daf7e2523497a6acabe03b86108c8a87af2a214"
         ),
         .binaryTarget(
             name: "RediwrapCore",
-            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.0-debug-2/RediwrapCore.xcframework.zip",
-            checksum: "f845eb534751369829faac23313b5a8af8ffe042b19b31f20b223ce6f575b3a9"
+            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.1/RediwrapCore.xcframework.zip",
+            checksum: "fee0d026881cf3798485382b56e530a5ffcc9456e29c94c478defd153d11d15e"
         ),
         .binaryTarget(
             name: "RediwrapGAM",
-            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.0-debug-2/RediwrapGAM.xcframework.zip",
-            checksum: "27a9770cf0cc070527039851fa180ae81ffcdd84a54500fb6243d5b4f9cc2546"
+            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.1/RediwrapGAM.xcframework.zip",
+            checksum: "a4e0d6adc6be15aed68ffd18c9f12cda5fbec8148bc2490793b8ff492bf05129"
         ),
         .binaryTarget(
             name: "RediwrapLevelPlay",
-            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.0-debug-2/RediwrapLevelPlay.xcframework.zip",
-            checksum: "0aa5a330db98618d490640ed146451637f157891c5ce2e30cb5442d014db9240"
+            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.1/RediwrapLevelPlay.xcframework.zip",
+            checksum: "ecb4287de66df9ff14bb229c66a26a36855da43c474622300451ba13ef071965"
         ),
         .binaryTarget(
             name: "RediwrapRendering",
-            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.0-debug-2/RediwrapRendering.xcframework.zip",
-            checksum: "47b67f60b5fe7e05e2b9fdfec2332349a6a2694edc50759c972370685f78bc35"
+            url: "https://github.com/symplorEcho/rediwrap-ios-releases/releases/download/1.0.1/RediwrapRendering.xcframework.zip",
+            checksum: "604c09304473fa24db7fbab3e8d1d07724d9bde284488694a2689cf45845284d"
         ),
     ]
 )

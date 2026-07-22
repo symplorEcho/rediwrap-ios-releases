@@ -4,7 +4,7 @@ Compiled binary distribution of the Rediwrap SDK for iOS, consumed via
 Swift Package Manager.
 
 ```swift
-.package(url: "https://github.com/symplorEcho/rediwrap-ios-releases.git", from: "1.0.0-debug-2")
+.package(url: "https://github.com/symplorEcho/rediwrap-ios-releases.git", from: "1.0.1")
 ```
 
 ## Modules in this release
@@ -39,4 +39,4 @@ overwritten by the next automated release.
 
 ## Current version
 
-1.0.0-debug-2
+1.0.1
