@@ -4,15 +4,25 @@ Compiled binary distribution of the Rediwrap SDK for iOS, consumed via
 Swift Package Manager.
 
 ```swift
-.package(url: "https://github.com/symplorEcho/rediwrap-ios-releases.git", from: "1.0.0")
+.package(url: "https://github.com/symplorEcho/rediwrap-ios-releases.git", from: "1.0.0-debug-2")
 ```
 
-## What this is
+## Modules in this release
 
-Every release here is an `XCFramework` per module (RediwrapCore,
-RediwrapGAM, RediwrapAdMob, RediwrapMAX, RediwrapLevelPlay,
-RediwrapBackfill, RediwrapAnalytics, RediwrapRendering) plus the
-`Package.swift` that wires them up as `binaryTarget`s.
+- `RediwrapAnalytics`
+- `RediwrapBackfill`
+- `RediwrapCore`
+- `RediwrapGAM`
+- `RediwrapLevelPlay`
+- `RediwrapRendering`
+
+**RediwrapGAM** links against Google Mobile Ads. Add it alongside
+RediwrapGAM in your own `Package.swift` -- binary targets can't declare
+package dependencies, so this isn't automatic:
+
+```swift
+.package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", from: "12.0.0")
+```
 
 ## What this is not
 
@@ -22,12 +32,11 @@ binaries there; only the compiled output is published here.
 
 ## How releases get here
 
-`Package.swift` and the `.xcframework.zip` assets attached to each
-GitHub Release are published by CI from the private source repo on
-every version tag. **Do not edit this repo by hand** — changes will
-be overwritten by the next automated release.
+`Package.swift`, this README, and the `.xcframework.zip` release
+assets are published by CI from the private source repo on every
+version tag. **Do not edit this repo by hand** -- changes will be
+overwritten by the next automated release.
 
-## Status
+## Current version
 
-No release has been published yet. The first version will appear once
-the XCFramework build pipeline is wired up.
+1.0.0-debug-2
