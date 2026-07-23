@@ -4,7 +4,7 @@ Compiled binary distribution of the Rediwrap SDK for iOS, consumed via
 Swift Package Manager.
 
 ```swift
-.package(url: "https://github.com/symplorEcho/rediwrap-ios-releases.git", from: "1.0.3")
+.package(url: "https://github.com/symplorEcho/rediwrap-ios-releases.git", from: "1.0.4")
 ```
 
 ## Modules in this release, and what each one requires alongside it
@@ -26,27 +26,22 @@ done by hand:
 
 ## GoogleMobileAds and RediwrapGAM
 
-Google distributes `GoogleMobileAds` as a **static** library (not a
-real dynamic framework), which has no "link but don't embed" option --
-`RediwrapGAM.xcframework` unavoidably contains its own compiled copy.
-
-- **Using RediwrapGAM purely as a GAM mediation adapter** (configuring
-  the Custom Event class name in the Ad Manager dashboard, never
-  calling GoogleMobileAds APIs yourself)? Do **not** add
-  `GoogleMobileAds` as a separate dependency -- RediwrapGAM already
-  contains everything it needs, and adding it again just duplicates it.
-- **Calling GoogleMobileAds APIs directly in your own app code** (e.g.
-  creating `AdManagerBannerView` yourself)? You'll need to add it:
+`RediwrapGAM` compiles against GoogleMobileAds but does **not** link
+or embed it (confirmed via `nm`/`otool` -- zero GoogleMobileAds
+symbols end up in RediwrapGAM.xcframework's binary), the same
+`compileOnly`-style relationship the Android module has with
+`play-services-ads`. This means `GoogleMobileAds` is **always** a
+required dependency you add yourself, regardless of how you use
+RediwrapGAM:
 
 ```swift
 .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", from: "12.0.0")
 ```
 
-  This does mean two copies of GoogleMobileAds end up linked (yours,
-  and RediwrapGAM's embedded one) -- a real duplicate-symbol risk with
-  no clean fix, since it's inherent to Google's static distribution,
-  not something this build can route around. Prefer the pure adapter
-  pattern above if your integration allows it.
+Omitting it compiles fine but crashes at launch looking for a symbol
+that isn't there. Adding it gives you a single copy of GoogleMobileAds
+in your app regardless of whether you also call its APIs directly --
+no duplicate-symbol risk, unlike static-embedding SDKs.
 
 ## What this is not
 
@@ -63,4 +58,4 @@ overwritten by the next automated release.
 
 ## Current version
 
-1.0.3
+1.0.4
